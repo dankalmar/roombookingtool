@@ -1,1 +1,8 @@
-This is some place holder text.
+<h1> Here is a list of every event. Ever. </h1>
+
+<% @event.each do |e| %>
+<%= e.title %>
+<%= e.description %>
+<%= e.user %>
+<%= e.time %>
+	<% end %>
