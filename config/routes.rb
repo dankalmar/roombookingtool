@@ -1,5 +1,7 @@
 Roombookingapp::Application.routes.draw do
+  resources :events do
   resources :events
+  end
   root to: 'events#index'
 
   # The priority is based upon order of creation:

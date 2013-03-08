@@ -1,0 +1,18 @@
+<%= form_for Event.new do |e| %>
+
+<h2>Create new event</h2>
+<%= e.label :title %>
+<%= e.text_field :title %>
+
+<%= e.label :description %>
+<%= e.text_field :description %>
+
+<%= e.label :user %>
+<%= e.text_field :user %>
+
+<%= e.label :time %>
+<%= e.text_field :time %>
+
+<%= e.submit %>
+
+<% end %>
