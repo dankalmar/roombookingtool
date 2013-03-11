@@ -8,6 +8,8 @@ class EventsController < ApplicationController
 	end
 
 	def create
+		Rails.logger.debug 'PARAMS!!!!!!!!!!!!!!!!'
+		Rails.logger.debug params[:event]
 		@event = Event.new params[:event]
 
 		if @event.save
