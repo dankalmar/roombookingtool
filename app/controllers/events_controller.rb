@@ -1,6 +1,17 @@
 class EventsController < ApplicationController
 	def index
-		@events = Event.all
+		if params[:day]
+			@date = params[:day].to_date
+		else
+			@date = Date.today
+		end
+
+		@events = Event.where(created_at: @date.beginning_of_day..@date.end_of_day)
+
+
+		@events_month = Event.where(created_at: @date.beginning_of_month..@date.end_of_month).map do |d|
+			d.created_at.to_date
+		end
 	end
 
 	def new
@@ -8,9 +19,7 @@ class EventsController < ApplicationController
 	end
 
 	def create
-		Rails.logger.debug 'PARAMS!!!!!!!!!!!!!!!!'
-		Rails.logger.debug params[:event]
-		@event = Event.new params[:event]
+		@event = Event.new params[:events]
 
 		if @event.save
 			redirect_to events_path
@@ -25,7 +34,7 @@ class EventsController < ApplicationController
 
 	def update
 		@event = Event.find(params[:id])
-		if @event.update_attributes params[:event]
+		if @event.update_attributes params[:events]
 			redirect_to events_path
 		else
 			render :edit

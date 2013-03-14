@@ -1,0 +1,47 @@
+	<%= link_to "Previous month", events_path(day: @date - 1.month) %>
+
+	<%= @date.strftime("%B") %>
+
+	<%= link_to "Next month", events_path(day: @date + 1.month) %>
+
+<table>
+	<td class="span 2">
+		Monday
+	</td>
+	
+	<td class="span 2">
+		Tuesday
+	</td>
+
+	<td class="span 2">
+		Wednesday
+	</td>
+
+	<td class="span 2">
+		Thursday
+	</td>
+
+	<td class="span 2">
+		Friday
+	</td>
+
+	<td class="span 2">
+		Saturday
+	</td>
+
+	<td class="span 2">
+		Sunday
+	</td>
+
+	<% (@date.beginning_of_month.beginning_of_week..@date.end_of_month.end_of_week).each do |day| %>
+		<% if day.monday? %>
+		<tr>
+		<% end %>
+		
+		<td>
+		<%= link_to day.day, events_path(day: day) %>
+
+		</td>
+
+	<% end %>
+</table>
