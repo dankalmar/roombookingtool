@@ -3,8 +3,8 @@
 <%= render "calendar" %>
 
 <% @events.each do |d| %>
-        <%= d.title %>
-        <%= d.description %>
+	<%= d.title %>
+	<%= d.description %>
 <% end %>
 
 <%= link_to 'Book an event', new_event_path, :class => "btn btn-primary" %>
