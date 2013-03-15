@@ -1,15 +1,11 @@
 <h1> Click on a date to check what events are scheduled for that day. Go ahead, just try it. </h1>
 
-
-
-
-
-
-
 <%= render "calendar" %>
 
-
-<p>
+<% @events.each do |d| %>
+        <%= d.title %>
+        <%= d.description %>
+<% end %>
 
 <%= link_to 'Book an event', new_event_path, :class => "btn btn-primary" %>
 

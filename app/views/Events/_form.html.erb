@@ -1,18 +1,17 @@
-<%= form_for Event.new do |e| %>
+<%= form_for Event.new do |f| %>
 
 <h2>Create new event</h2>
-<%= e.label :title %>
-<%= e.text_field :title %>
+<%= f.label :title %>
+<%= f.text_field :title %>
 
-<%= e.label :description %>
-<%= e.text_field :description %>
+<%= f.label :description %>
+<%= f.text_field :description %>
 
-<%= e.label :user %>
-<%= e.select :user, ["Ladies Learning Code", "Girls Learning Code", "HackerYou", "Public"] %>
+<%= f.label :user %>
+<%= f.select :user, ["Ladies Learning Code", "Girls Learning Code", "HackerYou", "Public"] %>
 
-<%= e.label :time %>
-<%= e.text_field :time %>
-
+<%= f.label :time %>
+<%= f.text_field :time %>
 
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -23,9 +22,7 @@
     $( "#event_time" ).datepicker();
   });
   </script>
- 
 
-
-<%= e.submit %><p>or go <%= link_to 'back', events_path %></p>
+<%= f.submit %><p>or go <%= link_to 'back', events_path %></p>
 
 <% end %>
