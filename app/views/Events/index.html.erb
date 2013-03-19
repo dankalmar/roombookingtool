@@ -1,4 +1,17 @@
+<div class="container">
+	<div class="navbar navbar-fixed-top">
+  		<div class="navbar-inner">
+    		<a class="brand" href="#">Room Booking Tool</a>
+    		<ul class="nav">
+      			<li class="active"><a href="#">Home</a></li>
+      			<li><a href="#">About</a></li>
+      			<li><a href="#">Purchase</a></li>
+      			<li><a href="#">Contact</a></li>
+    		</ul>
+  		</div>
+	</div>
 <h1> Click on a date to check what events are scheduled for that day. Go ahead, just try it. </h1>
+	<div class="span6">
 
 <%= render "calendar" %>
 
@@ -8,5 +21,7 @@
 <% end %>
 
 <%= link_to 'Book an event', new_event_path, :class => "btn btn-primary" %>
+	</div>
+</div>
 
 
