@@ -7,21 +7,28 @@
 <%= f.label :description %>
 <%= f.text_field :description %>
 
-<%= e.label :time %>
-<%= e.text_field :time %>
-
-<%= f.label :time %>
-<%= f.text_field :time %>
 
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
   <link rel="stylesheet" href="/resources/demos/style.css" />
-  <script>
+
+<%= f.label :start_date %>
+<%= f.text_field :start_date %>
+<script>
   $(function() {
-    $( "#event_time" ).datepicker();
+    $( "#event_start_date" ).datepicker();
   });
   </script>
+
+<%= f.label :end_date %>
+<%= f.text_field :end_date %>
+<script>
+  $(function() {
+    $( "#event_end_date" ).datepicker();
+  });
+  </script>
+
 
 <%= f.submit %><p>or go <%= link_to 'back', events_path %></p>
 
