@@ -1,47 +1,53 @@
+<div class="row" style="margin-top: 40px";>
+<div class='calendar well'>
 <div class="header lead" style="text-align: center";>
 	<%= link_to "← ", events_path(day: @date - 1.month) %>
 	<%= @date.strftime("%B") %>
 	<%= link_to " →", events_path(day: @date + 1.month) %>
 </div>
 
-<table>
-	<td class="span 2">
+<table class='titles'>
+	<tr>
+	<td class="smallcaps">
 		MON
 	</td>
 	
-	<td class="span 2">
+	<td class="smallcaps">
 		TUES
 	</td>
 
-	<td class="span 2">
+	<td class="smallcaps">
 		WED
 	</td>
 
-	<td class="span 2">
+	<td class="smallcaps">
 		THU
 	</td>
 
-	<td class="span 2">
+	<td class="smallcaps">
 		FRI
 	</td>
 
-	<td class="span 2">
+	<td class="smallcaps">
 		SAT
 	</td>
 
-	<td class="span 2">
+	<td class="smallcaps">
 		SUN
 	</td>
+</tr>
+</table>
 
 	<% (@date.beginning_of_month.beginning_of_week..@date.end_of_month.end_of_week).each do |day| %>
 		<% if day.monday? %>
-		<tr>
+		<tr class="week"></tr>
 		<% end %>
 		
-		<td>
+		<td class="day">
 		<%= link_to day.day, events_path(day: day) %>
-
 		</td>
 
 	<% end %>
 </table>
+</div>
+</div>

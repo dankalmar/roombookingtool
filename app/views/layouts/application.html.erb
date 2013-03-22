@@ -5,9 +5,59 @@
   <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
   <style type="text/css">
 
-  h1 {
+  	h1 {
   	padding-top: 40px;
-  }
+  	}
+
+    .smallcaps {
+    font-size:10px;
+    color:#939598;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    line-height:15px;
+  	}
+
+  	.week {
+    clear: both;
+  	}
+
+  	.week .day:last-child {
+    border-right: solid 1px #666;
+  	}
+
+  	.calendar .week:last-child .day {
+    border-bottom: solid 1px #666;
+  	}
+  	
+  	.week .day:nth-child(6), .week .day:last-child {
+    background-color: #fafaff;
+	}
+
+	.day {
+    float: left;
+    border-top: solid 1px #666;
+    border-left: solid 1px #666;
+    width: 68px;
+    height: 68px;
+    background: white;
+    position: relative;
+    cursor: pointer;
+	}
+
+	.calendar {
+    width: 500px;
+    padding: 10px;
+    overflow: hidden;
+  	}
+
+  	.titles .day {
+    height: 10px;
+    background: none;
+    border: none;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+  	}
 
   </style>
 </head>
