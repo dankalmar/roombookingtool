@@ -8,31 +8,31 @@
 
 <table class='titles'>
 	<tr>
-	<td class="smallcaps">
+	<td class="day smallcaps">
 		MON
 	</td>
 	
-	<td class="smallcaps">
+	<td class="day smallcaps">
 		TUES
 	</td>
 
-	<td class="smallcaps">
+	<td class="day smallcaps">
 		WED
 	</td>
 
-	<td class="smallcaps">
+	<td class="day smallcaps">
 		THU
 	</td>
 
-	<td class="smallcaps">
+	<td class="day smallcaps">
 		FRI
 	</td>
 
-	<td class="smallcaps">
+	<td class="day smallcaps">
 		SAT
 	</td>
 
-	<td class="smallcaps">
+	<td class="day smallcaps">
 		SUN
 	</td>
 </tr>
@@ -40,7 +40,7 @@
 
 	<% (@date.beginning_of_month.beginning_of_week..@date.end_of_month.end_of_week).each do |day| %>
 		<% if day.monday? %>
-		<tr class="week"></tr>
+		<tr class="week"></div>
 		<% end %>
 		
 		<td class="day">
@@ -48,6 +48,5 @@
 		</td>
 
 	<% end %>
-</table>
 </div>
 </div>
