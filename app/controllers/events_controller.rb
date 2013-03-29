@@ -9,11 +9,11 @@ class EventsController < ApplicationController
 			@date = Date.today
 		end
 
-		@events = Event.where(created_at: @date.beginning_of_day..@date.end_of_day)
+		@events = Event.where(start_at: @date.beginning_of_day..@date.end_of_day)
 
 
-		@events_month = Event.where(created_at: @date.beginning_of_month..@date.end_of_month).map do |d|
-			d.created_at.to_date
+		@events_month = Event.where(start_at: @date.beginning_of_month..@date.end_of_month).map do |d|
+			d.start_at.to_date
 		end
 	end
 

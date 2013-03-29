@@ -1,14 +1,14 @@
 <div class="container">
-	<div class="span6">
+	<div class="row">
+		<div class="span8">
 
 		
 			<%= render "calendar" %>
 		
-	</div>
-	<div class="span6">
-	
+		</div>
+		<div class="span4">
 		
-			<h1>Click on a date to check what events are scheduled for that day.</h1>
+			<h2>Click on a date to check what events are scheduled for that day.</h2>
 			<%= link_to 'Book an event', new_event_path, :class => "btn btn-primary" %>
 
 			<% @events.each do |d| %>
@@ -16,7 +16,7 @@
 				<%= d.description %>
 			<% end %>
 		</div>
-	
+	</div>
 </div><!--container-->
 
 
