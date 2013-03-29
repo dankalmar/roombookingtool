@@ -1,16 +1,22 @@
 <div class="container">
 	<div class="span6">
-		<%= render "calendar" %>
+
+		
+			<%= render "calendar" %>
+		
 	</div>
 	<div class="span6">
-		<h1> Click on a date to check what events are scheduled for that day.</h1>
-		<%= link_to 'Book an event', new_event_path, :class => "btn btn-primary" %>
+	
+		
+			<h1>Click on a date to check what events are scheduled for that day.</h1>
+			<%= link_to 'Book an event', new_event_path, :class => "btn btn-primary" %>
 
-		<% @events.each do |d| %>
-			<%= d.title %>
-			<%= d.description %>
-		<% end %>
-	</div>
+			<% @events.each do |d| %>
+				<%= d.title %>
+				<%= d.description %>
+			<% end %>
+		</div>
+	
 </div><!--container-->
 
 
