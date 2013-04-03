@@ -1,4 +1,3 @@
-<div class="container">
 <%= form_for Event.new do |f| %>
 
 <h2>Create new event</h2>
@@ -26,7 +25,8 @@
 <%= f.text_field :end_time, class: "time_picker" %>
 
 
-<%= f.submit %><p>or go <%= link_to 'back', events_path %></p>
+<p><%= f.submit 'Submit', :class => "btn btn-primary" %></p>
+<p>or go <%= link_to 'back', events_path %></p>
 
 <% end %>
 
@@ -37,4 +37,3 @@
     $(".date_picker").datepicker({'autoclose': true});
   });
 </script>
-</div>
