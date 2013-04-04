@@ -15,6 +15,9 @@ class EventsController < ApplicationController
 		@events_month = Event.where(start_at: @date.beginning_of_month..@date.end_of_month).map do |d|
 			d.start_at.to_date
 		end
+
+		@users = User.all
+
 	end
 
 	def new
@@ -23,6 +26,8 @@ class EventsController < ApplicationController
 
 	def create
 		@event = Event.new params[:event]
+		@event.user_id = current_user.id
+
 
 		if @event.save
 			redirect_to events_path

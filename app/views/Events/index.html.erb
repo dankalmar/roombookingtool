@@ -13,6 +13,8 @@
 
 			<% @events.each do |d| %>
 				<%= @date %>
+				<%= d.user_id %>
+				<%= d.user.user_name %>
 				<%= d.title %>
 				<%= d.description %>
 				<%= d.start_at %>
