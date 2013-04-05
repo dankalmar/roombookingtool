@@ -9,6 +9,8 @@ class EventsController < ApplicationController
 			@date = Date.today
 		end
 
+		# Event.where("start_at::date = ? OR end_at::date = ?", @date, @date)
+
 		@events = Event.where(start_at: @date.beginning_of_day..@date.end_of_day)
 
 

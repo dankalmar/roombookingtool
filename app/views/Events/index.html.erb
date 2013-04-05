@@ -10,15 +10,17 @@
 		
 			<h2>Click on a date to check what events are scheduled for that day.</h2>
 			<%= link_to 'Book an event', new_event_path, :class => "btn btn-primary" %>
-
-			<% @events.each do |d| %>
-				<%= @date %>
-				<%= d.user_id %>
-				<%= d.user.user_name %>
-				<%= d.title %>
-				<%= d.description %>
-				<%= d.start_at %>
-				<%= d.end_at %>
+		<table>	
+			<ul>
+				<il><% @events.each do |d| %></il>
+				<il><%= @date.strftime("%A, %b %d") %></il>
+				<il><%= d.user.user_name %></il>
+				<il><%= d.title %></il>
+				<il><%= d.description %></il>
+				<il><%= d.start_at %></il>
+				<il><%= d.end_at %></il>
+			</ul>
+		</table>
 			<% end %>
 		</div>
 	</div>
