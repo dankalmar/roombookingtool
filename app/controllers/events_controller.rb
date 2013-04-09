@@ -28,10 +28,11 @@ class EventsController < ApplicationController
 
 	def create
 		@event = Event.new params[:event]
-		@event.user_id = current_user.id
+		@event.user = current_user
 
 
 		if @event.save
+			MyMailer.event_confirmation(@event.user).deliver
 			redirect_to events_path
 		else
 			render :new
