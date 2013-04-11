@@ -3,23 +3,8 @@ class EventsController < ApplicationController
 	before_filter :authenticate_user!, except: [:index]
 
 	def index
-		if params[:day]
-			@date = params[:day].to_date
-		else
-			@date = Date.today
-		end
-
-		# Event.where("start_at::date = ? OR end_at::date = ?", @date, @date)
-
-		@events = Event.where(start_at: @date.beginning_of_day..@date.end_of_day)
-
-
-		@events_month = Event.where(start_at: @date.beginning_of_month..@date.end_of_month).map do |d|
-			d.start_at.to_date
-		end
-
-		@users = User.all
-
+		@date = params[:day] ? params[:day].to_date : Date.today
+		@events = Event.where('DATE(start_at) <= ? AND DATE(end_at) >= ?', @date, @date)
 	end
 
 	def new
@@ -28,10 +13,11 @@ class EventsController < ApplicationController
 
 	def create
 		@event = Event.new params[:event]
-		@event.user_id = current_user.id
+		@event.user = current_user
 
 
 		if @event.save
+			MyMailer.event_confirmation(@event.user).deliver
 			redirect_to events_path
 		else
 			render :new
