@@ -10,9 +10,10 @@ class Event < ActiveRecord::Base
 
 
   def set_dates
-  	self.start_at = Time.zone.parse start_date + start_time
-  	self.end_at = Time.zone.parse end_date + end_time
+  	self.start_at = Time.strptime(start_date + ' ' + start_time, '%m/%d/%Y %l:%M%p')
 
+  	self.end_at = Time.strptime(end_date + ' ' + end_time, '%m/%d/%Y %l:%M%p')
+    
   end
 
   def time_is_available?
