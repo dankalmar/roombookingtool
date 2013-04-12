@@ -14,11 +14,11 @@
 			<table>	
 				<ul>
 					<% @events.each do |d| %>
-						<li><%#= d.user.user_name %></li>
+						<li><%= d.user.user_name %></li>
 						<li><%= d.title %></li>
 						<li><%= d.description %></li>
-						<li><%= d.start_at %></li>
-						<li><%= d.end_at %></li>
+						<li><%= d.start_at.strftime("Start: %B %e, %Y %m:%M %p") %></li>
+						<li><%= d.end_at.strftime("End: %B %e, %Y %m:%M %p") %></li>
 					<% end %>
 				</ul>
 			</table>
