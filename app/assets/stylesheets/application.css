@@ -9,6 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require fullcalendar
+ *= require fullcalendar.print
  *= require_tree .
  */
 
@@ -156,4 +158,12 @@
 
   .container {
     width: 1170px;
+  }
+
+  .pretty_circle {
+    z-index: 99;
+    font-size: 25px;
+    position: absolute;
+    top: 25px;
+    left: 25px; 
   }

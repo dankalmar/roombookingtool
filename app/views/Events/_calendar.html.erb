@@ -1,3 +1,19 @@
+<!-- <head>
+	<script>
+		$(document).ready(function() {
+
+    	// page is now ready, initialize the calendar...
+
+    	$('#calendar').fullCalendar({
+        // put your options and callbacks here
+    	})
+
+		});
+	</script>
+</head> -->
+
+<!-- <div id='calendar'></div> -->
+
 <div class="row" style="margin-top: 40px";>
 	<div class='calendar well'>
 		<div class="header lead" style="text-align: center";>
@@ -41,10 +57,14 @@
 			<% (@date.beginning_of_month.beginning_of_week..@date.end_of_month.end_of_week).each do |day| %>
 				<% if day.monday? %>
 					<tr class="week">
+
 				<% end %>
 				
 				<td class="date">
 					<%= link_to day.day, events_path(day: day) %>
+					<% if @events_hash[day.strftime("%d").to_i] %>
+						<span class="pretty_circle"><%= @events_hash[day.strftime("%d").to_i] %></span>
+					<% end %>
 				</td>
 			<% end %>
 		</table>
