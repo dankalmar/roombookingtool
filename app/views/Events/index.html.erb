@@ -10,7 +10,7 @@
 		
 			<h2>Click on a date to check what events are scheduled for that day.</h2>
 			<%= link_to 'Book an event', new_event_path, :class => "btn btn-primary" %>
-			<p><%= @date.strftime("%A, %b %d") %></p>
+			<p><%= @time.strftime("%A, %b %d") %></p>
 			<table>	
 				<ul class="unstyled">
 					<dl class="dl-horizontal">

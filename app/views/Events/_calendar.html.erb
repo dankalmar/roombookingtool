@@ -17,9 +17,9 @@
 <div class="row" style="margin-top: 40px";>
 	<div class='calendar well'>
 		<div class="header lead" style="text-align: center";>
-			<%= link_to "← ", events_path(day: @date - 1.month) %>
-			<%= @date.strftime("%B") %>
-			<%= link_to " →", events_path(day: @date + 1.month) %>
+			<%= link_to "← ", events_path(day: (@time - 1.month).to_date) %>
+			<%= @time.strftime("%B") %>
+			<%= link_to " →", events_path(day: (@time + 1.month).to_date) %>
 		</div>
 
 		<table class='titles'>
@@ -54,16 +54,18 @@
 			</tr>
 		</table>
 		<table>
-			<% (@date.beginning_of_month.beginning_of_week..@date.end_of_month.end_of_week).each do |day| %>
+			<% (@time.beginning_of_month.beginning_of_week.to_date..@time.end_of_month.end_of_week.to_date).each do |day| %>
 				<% if day.monday? %>
 					<tr class="week">
 
 				<% end %>
 				
 				<td class="date">
-					<%= link_to day.day, events_path(day: day) %>
-					<% if @events_hash[day.strftime("%d").to_i] %>
-						<span class="pretty_circle"><%= @events_hash[day.strftime("%d").to_i] %></span>
+					<%= link_to events_path(day: day) do %>
+						<%= day.day %>
+						<% if @events_hash[day.strftime("%d").to_i] %>
+							<div class="circle_background"><span class="pretty_circle"><%= @events_hash[day.strftime("%d").to_i] %></span></div>
+						<% end %>
 					<% end %>
 				</td>
 			<% end %>
