@@ -7,12 +7,13 @@
 		<div class="span4">
 			<h2>Click on a date to check what events are scheduled for that day.</h2>
 			<%= link_to 'Book an event', new_event_path, :class => "btn btn-primary" %>
-			<p><%= @time.strftime("%A, %b %d") %></p>
+			
 
 				<ul class="unstyled">
 					<dl class="dl-horizontal2">
 						<% @events.each do |d| %>
 						<div class="event_details">
+							<h3><%= @time.strftime("%A, %b %d") %></h3>
 							<li><%= d.user.user_name %></li>
 							<li><dt>Event Name:</dt><dd><%= d.title %></dd></li>
 							<li><dt>Description:</dt><dd><%= d.description %></dd></li>

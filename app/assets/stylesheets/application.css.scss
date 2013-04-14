@@ -212,7 +212,10 @@
 
   html {
     background: transparent image-url("hackerYouBackground.png") no-repeat center center fixed;
-    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
 
  p.today {
@@ -222,9 +225,10 @@
   }
 
   div.event_details {
-    min-height: 20px;
+  min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
+  width: 100%;
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
   -webkit-border-radius: 4px;
