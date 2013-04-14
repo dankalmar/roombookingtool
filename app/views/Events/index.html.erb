@@ -9,14 +9,16 @@
 			<%= link_to 'Book an event', new_event_path, :class => "btn btn-primary" %>
 			<p><%= @time.strftime("%A, %b %d") %></p>
 			<table>	
-				<ul class="unstyled well">
+				<ul class="unstyled">
 					<dl class="dl-horizontal">
 						<% @events.each do |d| %>
+						<div class="event_details">
 							<li><%= d.user.user_name %></li>
 							<li><dt>Event Name:</dt><dd><%= d.title %></dd></li>
 							<li><dt>Description:</dt><dd><%= d.description %></dd></li>
 							<li><dt>Start Time:</dt><dd><%= d.start_at.strftime("%B %e, %Y %m:%M %p") %></dd></li>
 							<li><dt>End Time:</dt><dd><%= d.end_at.strftime("%B %e, %Y %m:%M %p") %></dd></li>
+						</div>
 						<% end %>
 					</dl>
 				</ul>
