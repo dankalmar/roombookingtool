@@ -180,6 +180,7 @@
     height: 33px; 
     background: #006dcc;
     position: absolute;
+<<<<<<< HEAD
     top: 18px;
     left: 15px;
   }
@@ -205,4 +206,15 @@
 
   .link {
     padding: 5px;
+=======
+    top: 25px;
+    left: 25px; 
+  }
+
+  li.user_name {
+
+    text-decoration: none;
+    text-align: right;
+
+>>>>>>> df6b541ee4230f158e4958d21a8157311ac74e95
   }
