@@ -5,20 +5,22 @@
 		</div>
 
 		<div class="span4">
-				<h2>Click on a date to check what events are scheduled for that day.</h2>
-				<%= link_to 'Book an event', new_event_path, :class => "btn btn-primary" %>
-				<p class="today"><%= @time.strftime("%A, %b %d") %></p>
-				<table>	
-					<ul>
+			<h2>Click on a date to check what events are scheduled for that day.</h2>
+			<%= link_to 'Book an event', new_event_path, :class => "btn btn-primary" %>
+			<p><%= @time.strftime("%A, %b %d") %></p>
+			<table>	
+				<ul class="unstyled">
+					<dl class="dl-horizontal">
 						<% @events.each do |d| %>
 							<li><%= d.user.user_name %></li>
-							<li><%= d.title %></li>
-							<li><%= d.description %></li>
-							<li><%= d.start_at.strftime("Start: %B %e, %Y %m:%M %p") %></li>
-							<li><%= d.end_at.strftime("End: %B %e, %Y %m:%M %p") %></li>
+							<li><dt>Event Name:</dt><dd><%= d.title %></dd></li>
+							<li><dt>Description:</dt><dd><%= d.description %></dd></li>
+							<li><dt>Start Time:</dt><dd><%= d.start_at.strftime("%B %e, %Y %m:%M %p") %></dd></li>
+							<li><dt>End Time:</dt><dd><%= d.end_at.strftime("%B %e, %Y %m:%M %p") %></dd></li>
 						<% end %>
-					</ul>
-				</table>
+					</dl>
+				</ul>
+			</table>
 		</div>
 	</div>
 </div><!--container-->
