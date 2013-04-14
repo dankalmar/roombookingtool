@@ -1,5 +1,5 @@
 <div class="container">
-	<div class="row"
+	<div class="row">
 		<div class="span8">
 			<%= render "calendar" %>
 		</div>
@@ -9,7 +9,7 @@
 			<%= link_to 'Book an event', new_event_path, :class => "btn btn-primary" %>
 			<p><%= @time.strftime("%A, %b %d") %></p>
 			<table>	
-				<ul class="unstyled">
+				<ul class="unstyled well">
 					<dl class="dl-horizontal">
 						<% @events.each do |d| %>
 							<li><%= d.user.user_name %></li>
