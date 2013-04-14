@@ -1,13 +1,10 @@
 <div class="container">
-	<div class="row">
+	<div class="row"
 		<div class="span8">
-
 			<%= render "calendar" %>
-		
 		</div>
 
 		<div class="span4">
-		
 			<h2>Click on a date to check what events are scheduled for that day.</h2>
 			<%= link_to 'Book an event', new_event_path, :class => "btn btn-primary" %>
 			<p><%= @time.strftime("%A, %b %d") %></p>

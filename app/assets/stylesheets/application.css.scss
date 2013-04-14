@@ -209,13 +209,14 @@
     left: 25px; 
   }
 
-  li.user_name {
-
-    text-decoration: none;
-    text-align: right;
-  }
 
   html {
     background: transparent image-url("hackerYouBackground.png") no-repeat center center fixed;
     width: 100%;
+  }
+
+ p.today {
+    margin-top: 20px;
+    font-size: 25px;
+    font-style: bold;
   }
