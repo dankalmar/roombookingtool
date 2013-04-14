@@ -61,9 +61,11 @@
 				<% end %>
 				
 				<td class="date">
-					<%= link_to day.day, events_path(day: day) %>
-					<% if @events_hash[day.strftime("%d").to_i] %>
-						<span class="pretty_circle"><%= @events_hash[day.strftime("%d").to_i] %></span>
+					<%= link_to events_path(day: day) do %>
+						<%= day.day %>
+						<% if @events_hash[day.strftime("%d").to_i] %>
+							<div class="circle_background"><span class="pretty_circle"><%= @events_hash[day.strftime("%d").to_i] %></span></div>
+						<% end %>
 					<% end %>
 				</td>
 			<% end %>

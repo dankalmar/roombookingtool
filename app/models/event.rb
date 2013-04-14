@@ -7,6 +7,7 @@ class Event < ActiveRecord::Base
 
   validate :time_is_available?
   validate :time_is_in_the_past?
+  validate :ends_after_it_starts?
 
 
   def set_dates
@@ -26,6 +27,12 @@ class Event < ActiveRecord::Base
   	if start_at && start_at < Date.today
   		errors.add(:start_at, "Can't be in the past")
   	end
+  end
+
+  def ends_after_it_starts?
+    if start_at > end_at
+      errors.add(:start_at, "Your event must end after it starts, okay?")
+    end
   end
 
 end

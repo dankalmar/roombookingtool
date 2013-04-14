@@ -118,6 +118,11 @@
     height: 100%;
   }
 
+  .date a:hover {
+    text-decoration: none;
+    color: #0088cc;
+  }
+
   .titles .date {
     height: 10px;
     background: none;
@@ -163,7 +168,41 @@
   .pretty_circle {
     z-index: 99;
     font-size: 25px;
+    color: white;
     position: absolute;
-    top: 25px;
-    left: 25px; 
+    top: 7px;
+    left: 10px; 
+  }
+
+  .circle_background {
+    border-radius: 50%;
+    width: 33px;
+    height: 33px; 
+    background: #006dcc;
+    position: absolute;
+    top: 18px;
+    left: 15px;
+  }
+
+  .circle_background:hover {
+    background: #0044cc;
+    margin-right: 1px;
+    margin-top: 1px;
+  }
+
+   .day a {
+    display: block;
+  }
+
+  .titles .day {
+    height: 10px;
+    background: none;
+    border: none;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+  }
+
+  .link {
+    padding: 5px;
   }
