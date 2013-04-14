@@ -1,27 +1,24 @@
 <div class="container">
-	<div class="row">
+	<div class="row"
 		<div class="span8">
-
 			<%= render "calendar" %>
-		
 		</div>
 
 		<div class="span4">
-		
-			<h2>Click on a date to check what events are scheduled for that day.</h2>
-			<%= link_to 'Book an event', new_event_path, :class => "btn btn-primary" %>
-			<p><%= @time.strftime("%A, %b %d") %></p>
-			<table>	
-				<ul>
-					<% @events.each do |d| %>
-						<li><%= d.user.user_name %></li>
-						<li><%= d.title %></li>
-						<li><%= d.description %></li>
-						<li><%= d.start_at.strftime("Start: %B %e, %Y %m:%M %p") %></li>
-						<li><%= d.end_at.strftime("End: %B %e, %Y %m:%M %p") %></li>
-					<% end %>
-				</ul>
-			</table>
+				<h2>Click on a date to check what events are scheduled for that day.</h2>
+				<%= link_to 'Book an event', new_event_path, :class => "btn btn-primary" %>
+				<p class="today"><%= @time.strftime("%A, %b %d") %></p>
+				<table>	
+					<ul>
+						<% @events.each do |d| %>
+							<li><%= d.user.user_name %></li>
+							<li><%= d.title %></li>
+							<li><%= d.description %></li>
+							<li><%= d.start_at.strftime("Start: %B %e, %Y %m:%M %p") %></li>
+							<li><%= d.end_at.strftime("End: %B %e, %Y %m:%M %p") %></li>
+						<% end %>
+					</ul>
+				</table>
 		</div>
 	</div>
 </div><!--container-->
