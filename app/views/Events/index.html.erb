@@ -12,14 +12,16 @@
 			<%= link_to 'Book an event', new_event_path, :class => "btn btn-primary" %>
 			<p><%= @date.strftime("%A, %b %d") %></p>
 			<table>	
-				<ul>
-					<% @events.each do |d| %>
-						<li><%= d.user.user_name %></li>
-						<li><%= d.title %></li>
-						<li><%= d.description %></li>
-						<li><%= d.start_at.strftime("Start: %B %e, %Y %m:%M %p") %></li>
-						<li><%= d.end_at.strftime("End: %B %e, %Y %m:%M %p") %></li>
-					<% end %>
+				<ul class="unstyled">
+					<dl class="dl-horizontal">
+						<% @events.each do |d| %>
+							<li><%= d.user.user_name %></li>
+							<li><dt>Event Name:</dt><dd><%= d.title %></dd></li>
+							<li><dt>Description:</dt><dd><%= d.description %></dd></li>
+							<li><dt>Start Time:</dt><dd><%= d.start_at.strftime("%B %e, %Y %m:%M %p") %></dd></li>
+							<li><dt>End Time:</dt><dd><%= d.end_at.strftime("%B %e, %Y %m:%M %p") %></dd></li>
+						<% end %>
+					</dl>
 				</ul>
 			</table>
 		</div>
