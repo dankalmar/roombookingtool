@@ -289,6 +289,8 @@ dd {
   margin-left: 180px;
 }
 
-form-signin.input {
-width: 286px;
+.form-signin {
+  input, textarea {
+    width: 284px;
+  }
 }
