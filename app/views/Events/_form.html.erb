@@ -1,6 +1,8 @@
+<form class="form-signin">
 <%= form_for Event.new do |f| %>
 
-<h2>Create new event</h2>
+<h2 class="form-signin-heading">Create new event</h2>
+
 <%= f.label :title %>
 <%= f.text_field :title %>
 
@@ -37,10 +39,4 @@
     $(".date_picker").datepicker({'autoclose': true});
   });
 </script>
-
-<script>
-// $('#id_datepicker').datepicker({
-//   'onSelect': function(){
-//     $('#calendar').fullCalendar('gotoDate',$('#id_datepicker').datepicker( 'getDate' ));
-// }
-// </script>
+</form>
