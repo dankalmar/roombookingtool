@@ -14,6 +14,8 @@
  *= require_tree .
  */
 
+ @import "bootstrap";
+
   .week {
     clear: both;
   }
@@ -51,14 +53,10 @@
     color: #090;
   }
 
-  h2 {
-    font-size: 30px;
+  .span6 h2 {
+    font-size: 35px;
     line-height: 40px;
     margin-top: 50px;
-  }
-
-  .span5 {
-    margin-left: -1px;
   }
 
   .lead {
@@ -101,8 +99,9 @@
                 box-shadow: 0 1px 2px rgba(0,0,0,.05);
       }
 
-  #contact-page h2 {
+  .form-signin h2 {
     margin-top: 0px;
+    font-size: 31px;
   }
 
   input, textarea, .uneditable-input {
@@ -209,7 +208,6 @@
     left: 25px; 
   }
 
-
   html {
     background: transparent image-url("hackerYouBackground.png") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -293,4 +291,16 @@ dd {
   input, textarea {
     width: 284px;
   }
+}
+
+body {
+  background: none;
+}
+
+p.back {
+  margin-top: -15px;
+}
+
+button.btn, input[type="submit"].btn {
+width: 299px;
 }
