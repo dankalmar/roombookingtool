@@ -53,10 +53,11 @@
     color: #090;
   }
 
-  .span6 h2 {
+  .row .span6 h2 {
     font-size: 35px;
     line-height: 40px;
-    margin-top: 50px;
+    margin-top: 20px;
+    margin-left: -45px;
   }
 
   .lead {
@@ -303,4 +304,12 @@ p.back {
 
 button.btn, input[type="submit"].btn {
 width: 299px;
+}
+
+.row {
+  margin-top: 20px;
+}
+
+a.btn.btn-primary {
+  margin-left: -45px;
 }
