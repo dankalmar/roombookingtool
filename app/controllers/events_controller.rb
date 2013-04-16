@@ -29,7 +29,6 @@ class EventsController < ApplicationController
     @event = Event.new params[:event]
     @event.user = current_user
 
-
     if @event.save
       MyMailer.event_confirmation(@event.user).deliver
       render :business

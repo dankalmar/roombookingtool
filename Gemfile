@@ -14,6 +14,8 @@ group :production do
  gem 'pg'
 end
 
+gem 'pry'
+
 gem 'devise'
 gem 'bootstrap-sass', '~> 2.3.1.0'
 

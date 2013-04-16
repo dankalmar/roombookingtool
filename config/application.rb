@@ -49,19 +49,19 @@ module Roombookingapp
     # like if you have constraints or database-specific column types
     # config.active_record.schema_format = :sql
 
-    # config.action_mailer.delivery_method = :smtp
-    # config.action_mailer.smtp_settings = {
-    # :address              => "smtp.gmail.com",
-    # :port                 => 587,
-    # :user_name            => 'heatherpayne5@gmail.com',
-    # :password             => ENV[GMAIL_PASSWORD],
-    # :authentication       => 'plain',
-    # :enable_starttls_auto => true  }
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :user_name            => 'heatherpayne5@gmail.com',
+    :password             => ENV["GMAIL_PASSWORD"],
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
 
-    # config.action_mailer.default_url_options = {
-    #     :host => 'localhost',
-    #     :port => 3000
-    # }
+    config.action_mailer.default_url_options = {
+        :host => 'localhost',
+        :port => 3000
+    }
 
     # Enforce whitelist mode for mass assignment.
     # This will create an empty whitelist of attributes available for mass-assignment for all models
