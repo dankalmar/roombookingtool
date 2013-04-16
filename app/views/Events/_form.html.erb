@@ -1,5 +1,4 @@
-<form class="form-signin">
-<%= form_for Event.new do |f| %>
+<%= form_for @event, html: {class: "form-signin"} do |f| %>
 
 <h2 class="form-signin-heading">Create new event</h2>
 
@@ -39,4 +38,4 @@
     $(".date_picker").datepicker({'autoclose': true});
   });
 </script>
-</form>
+

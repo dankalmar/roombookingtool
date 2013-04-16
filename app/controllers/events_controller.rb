@@ -32,7 +32,7 @@ class EventsController < ApplicationController
 
     if @event.save
       MyMailer.event_confirmation(@event.user).deliver
-      redirect_to events_path
+      render :business
     else
       render :new
     end
