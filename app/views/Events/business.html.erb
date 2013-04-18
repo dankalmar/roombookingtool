@@ -1,7 +1,12 @@
-<%= image_tag "business.jpg" %>
+<div class="row-fluid">
+  	<div class="span12 pagination-centered">
+		<%= image_tag("business.jpg", alt: "HAHA BUSINESS", size: "600x600") %>
+	</div>
+</div>
+
 
 <script>
 setTimeout(function() {
              window.location.href = "<%= events_path %>";
-            }, 1000);
+            }, 2000);
 </script>
