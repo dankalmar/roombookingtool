@@ -299,6 +299,7 @@ dd {
 
 body {
   background: none;
+  height: 100%;
 }
 
 p.back {
@@ -316,4 +317,10 @@ margin-top: 5px;
 
 a.btn.btn-primary {
   margin-left: -45px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
 }

@@ -7,7 +7,7 @@
   <%= javascript_include_tag "application" %>
 </head>
 <body>
-      
+    <div class="wrap">
       <div class="navbar">
         <div class="navbar-inner">
           <a class="brand" <%= link_to "Hackeroom", events_path %>
@@ -22,7 +22,12 @@
             </ul>
         </div>
       </div>
-
+    
       <%= yield %>
+    </div>
+    <div class="footer">
+        <p>Created with mucho love by <a href="http://twitter.com/dankalmar">Dan Kalmar</a> & <a href="http://twitter.com/heatherpayne">Heather Payne</a> at HackerYou, the best school in the entire world. <a href="http://hackeryou.com/courses/hackeryou-summer-academy-2013-ruby-on-rails/">Apply for HackerYou's summer 2013 cohort now.</a></p>
+      </div>
+    </div>
 </body>
 </html>
