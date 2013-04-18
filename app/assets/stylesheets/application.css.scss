@@ -227,7 +227,7 @@
 
   div.event_details {
   min-height: 20px;
-  padding: 19px 19px 42px 19px;
+  padding: 19px 19px 29px 19px;
   margin-bottom: 20px;
   width: 459px;
   background-color: #f5f5f5;
@@ -299,6 +299,7 @@ dd {
 
 body {
   background: none;
+  height: 100%;
 }
 
 p.back {
@@ -307,6 +308,7 @@ p.back {
 
 button.btn, input[type="submit"].btn {
 width: 299px;
+margin-top: 5px;
 }
 
 .row {
@@ -315,4 +317,10 @@ width: 299px;
 
 a.btn.btn-primary {
   margin-left: -45px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
 }
