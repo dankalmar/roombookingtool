@@ -1,8 +1,10 @@
 <div class="container">
 	<% if @event.errors.any? %>
-		<div class='alert alert-error'>
-			<ul class="unstyled">
+		<div class='form_errors'>
+			<h3>Hold up!</h3>
+			<%= image_tag "paddlin.png" %>
 				<% @event.errors.full_messages.each do |message| %>
+				<ul class="unstyled">
 				<li><%= message %></li>
 			</ul>
 			<% end %>
