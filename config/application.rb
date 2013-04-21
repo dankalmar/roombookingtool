@@ -65,10 +65,10 @@ module Roombookingapp
     # Email Settings
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
-        :address              => "smtp.gmail.com",
+        :address              => "smtp.mandrillapp.com",
         :port                 => 587,
         :domain               => "gmail.com",
-        :user_name            => 'roombookingapp@gmail.com',
+        :user_name            => 'heather@heatherpayne.ca',
         :password             => ENV['GMAIL_PASSWORD'],
         :authentication       => 'plain',
         :enable_starttls_auto => true  
