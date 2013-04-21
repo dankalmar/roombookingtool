@@ -18,7 +18,10 @@
 							<dt>Description:</dt><dd><%= d.description %></dd>
 							<dt>Start Time:</dt><dd><%= d.start_at.strftime("%A, %B %e at %l:%M %P") %></dd>
 							<dt>End Time:</dt><dd><%= d.end_at.strftime("%A, %B %e at %l:%M %P") %></dd>
-							<span><%= button_to "delete", d, :method=>:delete, :class=>:destroy %></span>
+								<% if d.user == current_user %>
+									<span><%= button_to "delete", d, :method=>:delete, :class=>:destroy %></span>
+									<%= link_to "edit", edit_event_path(d) %>
+								<% end %>
 						</div>
 						<% end %>
 					</dl>
