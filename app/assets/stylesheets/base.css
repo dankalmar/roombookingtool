@@ -481,7 +481,7 @@ pre .variable.global, pre .variable.class, pre .variable.instance {
   line-height:14px;
   vertical-align:text-top;
   background-image:url("glyphicons-halflings.png");
-  background-position:14px 14px;
+  /*background-position:14px 14px;*/
   background-repeat:no-repeat;
 }
 [class^="icon-"]:last-child, [class*=" icon-"]:last-child { *margin-left:0; }
