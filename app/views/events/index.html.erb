@@ -11,7 +11,7 @@
 
 			<dl class="dl-horizontal2">
 				<% @events.each do |d| %>
-					<div class="event_details">
+					<div class="event_details clearfix">
 						<h3><%= @time.strftime("%A, %B %d, %Y") %></h3>
 						<dt>Booked by:</dt><dd><%= d.user.user_name %></dd>
 						<dt>Event Name:</dt><dd><%= d.title %></dd>
