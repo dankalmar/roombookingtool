@@ -69,9 +69,7 @@ module Roombookingapp
         :port                 => 587,
         :domain               => "gmail.com",
         :user_name            => 'heather@heatherpayne.ca',
-        :password             => ENV['GMAIL_PASSWORD'],
-        :authentication       => 'plain',
-        :enable_starttls_auto => true  
+        :password             => ENV['GMAIL_PASSWORD']
     }
     config.action_mailer.default_url_options = {
       :host => "hackeroom.herokuapp.com",
