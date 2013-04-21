@@ -20,11 +20,11 @@
 						<dt>End Time:</dt><dd><%= d.end_at.strftime("%A, %B %e at %l:%M %P") %></dd>
 						
 						<% if d.user == current_user %>
-							<%= link_to '<i class="icon-edit"></i>'.html_safe, edit_event_path(d) %>
+							<%= link_to '<i class="icon-edit pull-right"></i>'.html_safe, edit_event_path(d) %>
 							
 
-							<%= link_to d, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger' do %>
-							<i class="icon-trash icon-white"></i>
+							<%= link_to d, confirm: 'Are you sure?', method: :delete do %>
+							<i class="icon-trash icon-white pull-right"></i>
 								<% end %>
 						<% end %>
 					</div>
