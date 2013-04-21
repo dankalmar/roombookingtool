@@ -61,5 +61,22 @@ module Roombookingapp
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Email Settings
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+        :address              => "smtp.gmail.com",
+        :port                 => 587,
+        :domain               => "gmail.com",
+        :user_name            => 'roombookingapp@gmail.com',
+        :password             => ENV['GMAIL_PASSWORD'],
+        :authentication       => 'plain',
+        :enable_starttls_auto => true  
+    }
+    config.action_mailer.default_url_options = {
+      :host => "hackeroom.herokuapp.com",
+      :port => 80
+    }
+
   end
 end
