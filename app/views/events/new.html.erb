@@ -1,4 +1,6 @@
 <div class="container">
+	
+
 	<% if @event.errors.any? %>
 		<div class='form_errors'>
 			<h3>Hold up!</h3>
@@ -8,10 +10,9 @@
 				<li><%= message %></li>
 			</ul>
 			<% end %>
-
 		</div>
 	<% end %>
-	<h2 class="form-signin-heading">Create new event</h2>
+	
 	
 	<%= render 'form' %>
 </div>
