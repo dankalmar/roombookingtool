@@ -9,22 +9,23 @@
 			<%= link_to 'Book an event', new_event_path, :class => "btn btn-primary" %>
 			
 
-					<dl class="dl-horizontal2">
-						<% @events.each do |d| %>
-						<div class="event_details">
-							<h3><%= @time.strftime("%A, %B %d, %Y") %></h3>
-							<dt>Booked by:</dt><dd><%= d.user.user_name %></dd>
-							<dt>Event Name:</dt><dd><%= d.title %></dd>
-							<dt>Description:</dt><dd><%= d.description %></dd>
-							<dt>Start Time:</dt><dd><%= d.start_at.strftime("%A, %B %e at %l:%M %P") %></dd>
-							<dt>End Time:</dt><dd><%= d.end_at.strftime("%A, %B %e at %l:%M %P") %></dd>
-								<% if d.user == current_user %>
-									<span><%= button_to "delete", d, :method=>:delete, :class=>:destroy %></span>
-									<%= link_to "edit", edit_event_path(d) %>
-								<% end %>
-						</div>
+			<dl class="dl-horizontal2">
+				<% @events.each do |d| %>
+					<div class="event_details">
+						<h3><%= @time.strftime("%A, %B %d, %Y") %></h3>
+						<dt>Booked by:</dt><dd><%= d.user.user_name %></dd>
+						<dt>Event Name:</dt><dd><%= d.title %></dd>
+						<dt>Description:</dt><dd><%= d.description %></dd>
+						<dt>Start Time:</dt><dd><%= d.start_at.strftime("%A, %B %e at %l:%M %P") %></dd>
+						<dt>End Time:</dt><dd><%= d.end_at.strftime("%A, %B %e at %l:%M %P") %></dd>
+						
+						<% if d.user == current_user %>
+							<%= link_to "edit", edit_event_path(d) %>
+							<span><%= button_to "delete", event_path(d), :method => :delete, :class=> "btn btn-link", data: { confirm: 'Are you sure?' } %></span>
 						<% end %>
-					</dl>
+					</div>
+				<% end %>
+			</dl>
 
 		</div>
 	</div>

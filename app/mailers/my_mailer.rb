@@ -4,7 +4,7 @@ class MyMailer < ActionMailer::Base
 		@user = user
 
 		mail(to: user.email,
-			from: 'heather@heatherpayne.ca',
+			from: 'roombookingapp@gmail.com',
 			subject: 'Welcome')
 	end
 
@@ -12,7 +12,7 @@ class MyMailer < ActionMailer::Base
 		@user = user
 
 		mail(to: user.email,
-			from: 'dan@shoplocket.com',
+			from: 'roombookingapp@gmail.com',
 			subject: 'Your event is booked!')
 	end
 	
