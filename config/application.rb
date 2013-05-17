@@ -63,17 +63,17 @@ module Roombookingapp
     config.assets.version = '1.0'
 
     # Email Settings
-    config.action_mailer.delivery_method = :smtp
-    config.action_mailer.smtp_settings = {
-        :address              => "smtp.mandrillapp.com",
-        :port                 => 587,
-        :user_name            => 'heather@heatherpayne.ca',
-        :password             => ENV['GMAIL_PASSWORD']
-    }
-    config.action_mailer.default_url_options = {
-      :host => "hackeroom.herokuapp.com",
-      :port => 80
-    }
+    # config.action_mailer.delivery_method = :smtp
+    # config.action_mailer.smtp_settings = {
+    #     :address              => "smtp.mandrillapp.com",
+    #     :port                 => 587,
+    #     :user_name            => 'heather@heatherpayne.ca',
+    #     :password             => ENV['GMAIL_PASSWORD']
+    # }
+    # config.action_mailer.default_url_options = {
+    #   :host => "hackeroom.herokuapp.com",
+    #   :port => 80
+    # }
 
   end
 end
