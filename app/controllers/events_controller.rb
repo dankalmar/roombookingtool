@@ -9,7 +9,7 @@ class EventsController < ApplicationController
 
     @events_hash = {}
     monthly_events.each do |event|
-      day_range = event.start_at.strftime("%d").to_i..event.end_at.strftime("%d").to_i
+      day_range = event.start_at.strftime("%d%m%Y").to_i..event.end_at.strftime("%d%m%Y").to_i
       day_range.each do |day|
         if @events_hash[day]
           @events_hash[day] += 1
