@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'time'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -37,6 +38,11 @@ module Roombookingapp
     config.encoding = "utf-8"
 
     config.time_zone = 'Eastern Time (US & Canada)'
+
+    before_filter :set_user_time_zone
+    def set_user_time_zone
+        Time.zone = current_user.time_zone if logged_in?
+    end
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
