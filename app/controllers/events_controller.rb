@@ -2,11 +2,6 @@ class EventsController < ApplicationController
   
   before_filter :authenticate_user!, except: [:index]
 
-  # before_filter :set_user_time_zone
-  #   def set_user_time_zone
-  #       Time.zone = current_user.time_zone if logged_in?
-  #   end
-
   def index
     @time = params[:day] ? Time.zone.parse(params[:day], '%Y-%m-%d') : Time.zone.now
     @events = Event.where('start_at <= ? AND end_at >= ?', @time.end_of_day, @time.beginning_of_day)
