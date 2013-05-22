@@ -10,6 +10,6 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   validates :user_name, presence: true
-  validates :email, :inclusion => { :in => %w(info@ladieslearningcode.com info@hackeryou.com info@girlslearningcode.com heather@heatherpayne.ca),
+  validates :email, :inclusion => { :in => %w(info@ladieslearningcode.com info@hackeryou.com info@girlslearningcode.com kidslearningcode@gmail.com heather@heatherpayne.ca),
     :message => "To request an account, please contact info [at] ladieslearningcode.com" }
 end
